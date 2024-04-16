@@ -1,0 +1,93 @@
+ *{
+    box-sizing: border-box;
+}
+
+body{
+    background-color:rgb(158, 208, 252) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.magic{
+    background-color: rgb(254, 222, 174);
+    color: #112A46;
+    font-family: 'poppins', sans-serif;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px 20px;
+    cursor: pointer;
+    margin-bottom: 10px; 
+    margin-right: 10px;
+    letter-spacing: 1px;
+}
+.magic:focus{
+    outline: none;
+}
+.magic:active{
+    box-shadow: none;
+    transform: translateY(2px);
+}
+.magic:hover{
+    transform: scale(1.1) perspective(1500px) rotateY(10deg);
+    border: 0;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.653);
+}
+@media screen and (max-width: 600px) {
+    .magic {
+        margin: 20px 0px 10px 20px;
+    }   
+}
+
+.boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    transition: .4s ease;
+}
+  
+.big{
+    height: 600px;
+    width: 600px;
+}
+.big .box{
+    transform: rotateZ(360deg);
+}
+  
+.box{
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    position: relative;
+    height: 125px;
+    width: 125px;
+    transition: .4s ease;
+}
+  
+.box::after{
+    content: '';
+    background-color: rgb(204, 176, 247);
+    position: absolute;
+    top: 8px;
+    right: -15px;
+    height: 100%;
+    width: 15px;
+    transform: skewY(45deg);
+}
+  
+.box::before{
+    content: '';
+    background-color: rgb(204, 176, 247);
+    position: absolute;
+    bottom: -15px;
+    left: 8px;
+    height: 15px;
+    width: 100%;
+    transform: skewX(45deg);
+}
+  
